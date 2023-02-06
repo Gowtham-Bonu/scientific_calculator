@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Caluculator</title>
+    <link href="calc.css" rel="stylesheet" >
+    <!-- Added Bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="cont" >
+      <div class="output">
+        <output class="body" ></output>
+        <output class="head"></output>
+      </div>
+      <div>
+        <button class="up" name="deg" type="format">DEG</button>
+        <button class="up" name="fe" type="format">F-E</button>
+      </div>
+      <div>
+        <button class="up m" name="mc" type="memory">MC</button>
+        <button class="up m" name="mr" type="memory">MR</button>
+        <button class="up" name="m+" type="memory">M+</button>
+        <button class="up" name="m-" type="memory">M-</button>
+        <button class="up" name="ms" type="memory">MS</button>
+      </div>
+      <div class="selector" >
+        <div class="inner-selector" >
+          <img src="right-triangle.png" style="width: 20px; height: 20px;" >
+          <select class="trignometry" >
+            <option value="" class="trigo" selected= "false" >Trignometry</option>
+            <option  name="sin(" value="Math.sin(" type="trigo-function" >sin</option>
+            <option  name="cos(" value="Math.cos(" type="trigo-function" >cos</option>
+            <option  name="tan(" value="Math.tan(" type="trigo-function" >tan</option>
+            <option  name="sec(" value="Math.sec(" type="trigo-function" >sec</option>
+            <option  name="cosec(" value="Math.cosec(" type="trigo-function" >cosec</option>
+            <option  name="cot(" value="Math.cot(" type="trigo-function" >cot</option>
+          </select>
+        </div>
+        <div class="inner-selector">
+          <img src="musical-symbol-of-letter-f.png" style="width: 20px; height: 20px;" >
+          <select class="functions">
+            <option value="" class="fun" selected >Function</option>
+            <option  name="ceil(" value="Math.ceil(" type="gen-function" >ceil</option>
+            <option  name="floor(" value="Math.floor(" type="gen-function" >floor</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <div class="input">
+          <button type="second">2<sup>nd</sup></button>
+          <button name="pi" value="Math.PI" type="operator">pi</button>
+          <button name="e" value="Math.E" type="operator">e</button>
+          <button type="clear">C</button>
+          <button type="back"><img  src="close.png" style="width: 20px; height: 20px;"></button>
+        </div>
+        <div class="input">
+          <button name="^(2)" value="**2" class="toggle1" type="toggle">x<sup>2</sup></button>
+          <button name="1/" value="1/" type="operator">1/x</button>
+          <button name="abs(" value="Math.abs(" type="operator">|x|</button>
+          <button name="exp(" value="2.7182**(" type="operator">exp</button>
+          <button name="mod" value="%" type="operator">mod</button>
+        </div>
+        <div class="input">
+          <button name="root(" value="Math.sqrt(" type="operator"><img src="square-root-of-x-math-formula.png" ></button>
+          <button name="(" value="(" type="operator">(</button>
+          <button name=")" value=")" type="operator">)</button>
+          <button name="!" type="factorial" class="factorial" >n!</button>
+          <button name="/" value="/" type="operator">/</button>
+        </div>
+        <div class="input">
+          <button name="^" value="**" type="operator">x<sup>y</sup></button>
+          <button class="numb" name="7" value="7" type="number">7</button>
+          <button class="numb" name="8" value="8" type="number">8</button>
+          <button class="numb" name="9" value="9" type="number">9</button>
+          <button name="x" value="*" type="operator">X</button>
+        </div>
+        <div class="input">
+          <button name="10^x(" value="10**(" class="toggle2" type="toggle">10<sup>x</sup></button>
+          <button class="numb" name="4" value="4" type="number">4</button>
+          <button class="numb" name="5" value="5" type="number">5</button>
+          <button class="numb" name="6" value="6" type="number">6</button>
+          <button name="-" value="-" type="operator">-</button>
+        </div>
+        <div class="input">
+          <button name="log(" value="(1/2.30258509)*Math.log(" type="operator" >log</button>
+          <button class="numb" name="1" value="1" type="number" >1</button>
+          <button class="numb" name="2" value="2" type="number">2</button>
+          <button class="numb" name="3" value="3" type="number">3</button>
+          <button name="+" value="+" type="operator">+</button>
+        </div>
+        <div class="input">
+          <button name="ln(" value="Math.log(" type="operator">ln</button>
+          <button class="numb"  name="prm" type="operator"><sup>+</sup>/<sub>-</sub></button>
+          <button class="numb" name="0" value="0" type="number">O</button>
+          <button class="numb" name="." value="." type="operator">.</button>
+          <button class="equals" type="equals" >=</button>
+        </div>
+      </div>
+    </div>
+    <script src="calce.js"></script>
+  </body>
+</html>
