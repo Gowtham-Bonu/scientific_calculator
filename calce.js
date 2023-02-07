@@ -158,29 +158,50 @@ buttons.forEach(button => {
         }
       } else {
         let content = head.textContent
-        let op = ""
-        let ind = (content.replace("-", "")).indexOf(".")
-        let incrementor = 0
-
-        if (ind == -1) {
-          incrementor = content.replace("-", "").length - 1
-          //console.log(incrementor)
-        } else {
-          incrementor = (content.slice(0, ind)).length - 1
-          //console.log(incrementor)
-          //console.log(content.slice(0, ind))
+        let ind = content.indexOf(".")
+        let lenth = 0
+        if (Number(content)>=1){
+          if (ind>0){
+            lenth = content.slice(0,ind).length-1
+            content = content.replace(".","")
+            content = content.slice(0,1)+"."+content.slice(1,content.length)+"e"+"+"+lenth
+            head.textContent = content
+          }else{
+            lenth = content.length-1
+            content = content.slice(0,1)+"."+content.slice(1,content.length)+"e"+"+"+lenth
+            head.textContent = content
+          }
+        }else if (Number(content)<=-1){
+          if (ind>0){
+            lenth = content.slice(0,ind).replace("-","").length-1
+            content = content.replace(".","")
+            content = content.slice(0,2)+"."+content.slice(2,content.length)+"e"+"+"+lenth
+            head.textContent = content
+          }else{
+            lenth = content.replace("-","").length-1
+            content = content.slice(0,2)+"."+content.slice(2,content.length)+"e"+"+"+lenth
+            head.textContent = content
+          }
+        }else if(Number(content)<1 && Number(content)>0){
+          if (ind>0){
+            lenth = (content.split("0")).length-1
+            content= content.replace(".", "")
+            content = content.slice(lenth, content.length)
+            content = content.slice(0,1)+"."+content.slice(1,content.length)+"e"+"-"+lenth
+            head.textContent = content
+          }
+        }else if(Number(content)>-1 && Number(content)<0){
+          if (ind>0){
+            lenth = (content.split("0")).length-1
+            content= content.replace(".", "")
+            content = content.replaceAll("0", "")
+            content = content.slice(0,2)+"."+content.slice(2,content.length)+"e"+"-"+lenth
+            head.textContent = content
+          }
+        }else{
+          content = "0.e + 0"
+          head.textContent = content
         }
-
-        if (Number(content) >= 0) {
-          op = "+"
-        } else {
-          op = "-"
-        }
-        //console.log(content)
-        let lenth = content.length
-        content = content.replace(".", "").replace("-", "")
-        content = content.slice(0, 1) + "." + content.slice(1, lenth) + "e" + op + String(incrementor)
-        head.textContent = content
       }
     } else if (type === "toggle") {
       if (sec) {
